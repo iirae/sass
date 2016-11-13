@@ -1,0 +1,13 @@
+//mixin
+$basic-font-color:#555;
+$strong-font-color:blue;
+@mixin border($border) {
+  border:1px solid $border;
+}
+
+@mixin border-radius($radius){
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}
+

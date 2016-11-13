@@ -1,0 +1,41 @@
+@charset "utf-8";
+@import "mixin";
+/* test */
+// 한줄 주석SCSS에서만 보임  sass --watch /Users/aenyongii/Documents/dev/sass
+h1 {
+  @include border(lightgreen);
+}
+
+.box {
+  width:30%;
+  height:50px;
+  background:purple;
+}
+.box1{
+  @extend .box;  //공통으로 쓰는게 있으면 extend해서 쓰면 된다.
+
+}
+nav {
+  height:50px;
+  & #gnb{
+    background: gray;
+    &:after{
+      display:block;
+      clear:both;
+      content:"";
+    }
+    & li{
+      width:50px;
+      float:left;
+      & a {
+        display:block;
+        //계산 가능
+        color:$basic-font-color;
+      }
+      & a:hover{
+        //color:$strong-font-color;
+        color:darken($strong-font-color, 30%)
+      }
+    }
+  }
+}
